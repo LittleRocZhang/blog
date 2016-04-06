@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>{{ page.title }}</title>
+	<style type="text/css">
+	*{margin: 0; padding: 0; box-sizing: border-box;}
+	#container{width: 100%; min-width: 640px;}
+	/*导航栏-bg*/
+	header{width: 100%; height: 60px; background-color: #2189be;}
+	header img{width: 40px; height: 40px; position: absolute; margin: 10px 5px 10px 25px;}
+	h1{margin: 20px 0 0 70px;font-family: "楷体","微软雅黑",sans-serif; font-size: 18px; color: #fff; display: inline-block;}
+	nav{float: right;margin-right: 50px;}
+	nav ul li{display: inline-block; line-height: 60px;}
+	nav li a:link,nav li a:visited{display: inline-block; width: 80px; font-family: "微软雅黑","黑体"; font-size: 16px; color: #fff; text-align: center; text-decoration: none;}
+	nav li a:hover,nav li a:active{background-color: #4da2ce;transition: all 0.4s;}
+	/*导航栏-end*/
+	/*侧边栏-bg*/
+	aside{width: 280px; height: 1000px; float: left; margin: 10px; background-color: #11456b;}
+	/*侧边栏-end*/
+	/*content-bg*/
+	#content{height: 1000px; margin:10px; margin-left: 300px;background-color: #eee;}
+	/*content-end*/
+	/*页脚-bg*/
+	footer{clear: both; width: 100%; height: 50px; text-align: center; font-family: "黑体","微软雅黑"; font-size: 14px;  line-height: 50px; color: #fff; background-color: #2189be;}
+	</style>
+</head>
+<body>
+	<div id="container">
+	<!--导航栏-->
+		<header>
+			<img src="images/logo.jpg" alt="头像" title="LittleRoc Zhang">
+			<h1>—自由 独立 有价值</h1>
+			<nav>
+				<ul>
+					<li><a href="javascript:">首页</a></li>
+					<li><a href="javascript:">技术分享</a></li>
+					<li><a href="javascript:">阅读随笔</a></li>
+					<li><a href="javascript:">感想札记</a></li>
+				</ul>
+			</nav>
+		</header>
+	<!--侧边栏-->
+		<aside>
+
+		</aside>
+	<!--content-->
+		<div id="content">
+			{{ content }}
+		</div>
+	<!--页脚-->
+		<footer>
+			LittleRoc Zhang&copy
+		</footer>
+	</div>
+</body>
+</html>
