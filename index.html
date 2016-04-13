@@ -7,18 +7,18 @@ title: 张鹏 Blog
 	<h2>我的blog</h2>
 	<ul>
 		<li>
-			<h3><a href="javascript:">11111哈</a></h3>
+			<h3><a href="javascript:" target="_blank">11111哈</a></h3>
 			<time>2016-04-13</time>
-			<p>xxx...<a href="javascript:" class="more">阅读更多</a></p>
+			<p>xxx...<a href="javascript:" class="more" target="_blank">阅读更多</a></p>
 		</li>
 	</ul>
 -->
 <ul>
 　　{% for post in site.posts %}
 　　　　<li>
-			<h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+			<h3><a href="{{ site.baseurl }}{{ post.url }}" target="_blank">{{ post.title }}</a></h3>
 			<time>{{ post.date | date_to_string }}</time>
-			<p> <a href="javascript:" class="more">阅读更多</a></p>
+			<p> <a href="{{ site.baseurl }}{{ post.url }}" class="more" target="_blank">阅读更多</a></p>
 
 		</li>
 　　{% endfor %}
