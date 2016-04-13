@@ -2,12 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-	<title>张鹏 Blog</title>
+	<title>张鹏 Blog-{{ page.title }}</title>
 	<style type="text/css">
 	*{ margin: 0; padding: 0; box-sizing: border-box;}
 	#container{ width: 100%; min-width: 1024px;}
 	/*导航栏-bg*/
-	header{ width: 100%; height: 60px; background-color: #2189be;}
+	header{ width: 100%; min-width: 1024px; height: 60px; background-color: #2189be;}
 	header img{ width: 40px; height: 40px; position: absolute; margin: 10px 5px 10px 25px;}
 	h1{ margin: 20px 0 0 70px;font-family: "楷体","微软雅黑",sans-serif; font-size: 18px; color: #fff; display: inline-block;}
 	nav{ float: right;margin-right: 50px;}
@@ -26,20 +26,17 @@
 	.address img,.e-mail img,.github img{ width: 18px;height: 18px; position: absolute; margin-left: -28px; margin-top: 3px;}
 	/*侧边栏-end*/
 	/*content-bg*/
-	#content{ min-width: 720px; margin:10px; margin-left: 300px; padding: 20px 30px; background-color: #eee; text-align: center;}
+	#content{ min-width: 720px; margin:10px; margin-left: 300px; padding: 30px 100px; background-color: #eee;}
 	#content:after{ content: ""; display: block; clear: both;}
-	#content h2{ font-family: "黑体","微软雅黑"; font-size: 24px; color: #3579ab; text-align: left; margin-bottom: 20px;  line-height: 40px; border-bottom: 2px solid #11456b;}
-	#content ul{  display: inline-block; list-style: none; width: 720px; }
-	#content ul li{ display: inline-block; width: 100%; height: 160px; margin: 10px 0px; padding: 10px; background-color: #f1f1f1; border: 2px solid #beccff; text-align: left;}
-	#content ul li h3{ font-family:  "Helvetica Neue",Helvetica,Arial,sans-serif; font-size: 18px; font-weight: 700;}
-	#content ul li h3 a:link,
-	#content ul li h3 a:visited{ text-decoration: none; color: #259;}
-	#content ul li h3 a:hover,
-	#content ul li h3 a:active{ text-decoration: underline;}
-	#content ul li time{ display: block; margin-bottom: 5px; font-family: "黑体",sans-serif; font-size: 15px; font-weight: 500;}
-	#content ul li p{ display: inline-block; font-family:"微软雅黑"; font-size: 15px; color: #545454; line-height: 25px;}
-	#content a.more { display:inline-block; font-family: "Helvetica Neue",sans-serif; font-size: 15px;  color: #259; text-decoration: none; padding: 0 5px;}
-	#content a.more:hover{ background-color: #98c8e0; border-radius: 4px;}
+	#content .title{ width: 100%; height: 40px; margin-bottom: 20px; border-bottom: 2px solid #11456b;}
+	#content .title h2{ display: inline-block; font-family: "微软雅黑"; font-size: 24px; color: #259;  line-height: 40px;}
+	#content .asset_meta{ margin: 10px 0 20px;}
+	#content .asset_meta .author{ font-family: "黑体",sans-serif; font-size: 16px; font-weight: 500; }
+	#content .asset_meta .author a{ text-decoration: none; color: #556677;}
+	#content .asset_meta time{ margin-left: 20px; font-family: "黑体",sans-serif; font-size: 15px; font-weight: 500;}
+	#content h3{ font-family: "微软雅黑",sans-serif; font-size: 21px; color: #545454; line-height: 220%;}
+	#content h4{ font-family: "微软雅黑",sans-serif; font-size: 20px; color: #545454; line-height: 200%;}
+	#content p{ font-family: "宋体",sans-serif; font-size: 16px; color: #545454; text-indent: 2em; line-height: 200%;}
 	/*content-end*/
 	/*页脚-bg*/
 	footer{ clear: both; width: 100%; height: 50px; text-align: center; font-family: "黑体","微软雅黑"; font-size: 14px; line-height: 50px; color: #fff; background-color: #2189be;}
@@ -74,14 +71,15 @@
 	<!--content-->
 		<div id="content">
 			<!--
-			<h2>我的blog</h2>
-			<ul>
-				<li>
-			<h3><a href="javascript:">11111哈</a></h3>
-			<time>2016-04-13</time>
-			<p>xxx...<a href="javascript:" class="more">阅读更多</a></p>
-				</li>
-			</ul>
+			<div class="title">　
+				<h2>基于JavaScript的简单示例操作</h2>
+			</div>
+			<div class="asset_meta">
+				<span class="author"><a href="http://littleroczhang.github.io/blog">作者：张鹏</a></span>
+				<time>{{ page.date | date_to_string }}</time>
+			</div>
+			<h3>haha哈哈</h3>
+			<p>我的第一篇文章</p>
 			-->
 			{{ content }}
 		</div>
