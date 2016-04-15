@@ -14,11 +14,7 @@ title: 张鹏 Blog
 	</ul>
 -->
 <ul>
-　　{% for post in  paginator.posts %}
-		<li>
-			<h3><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></h3>
-			<time>{{ post.date | date_to_string }}</time>
-			<p>{{ post.excerpt }}<a href="{{ site.baseurl }}{{ post.url }}" class="more" target="_blank">阅读更多</a></p>
-		</li>
-　　{% endfor %}
+	{% for post in site.posts %}
+        <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+     {% endfor %}
 </ul>
