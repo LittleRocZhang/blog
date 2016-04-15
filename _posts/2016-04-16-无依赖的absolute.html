@@ -1,0 +1,65 @@
+---
+layout: post_page1
+title: CSS-无依赖的绝对定位 
+---
+	<div class="title">　
+		<h2>{{page.title}}</h2>
+	</div>
+	<div class="asset_meta">
+		<span class="author"><a href="http://littleroczhang.github.io/blog">作者：张鹏</a></span>
+		<time>{{ page.date | date_to_string }}</time>
+	</div>
+	<p>之前参加了2016年百度春季的ife，在做第一轮任务过程中刚好看到了张鑫旭大大分享的<a src="http://www.imooc.com/learn/192" target="_blank">深入理解之absolute</a>，在写页面的时候也运用了许多有关的知识。所以结合自己在实际操作中一些体会，在这里做一个梳理汇总。</p>
+	<p>所谓无依赖的绝对定位<code>absolute</code>，即不受<code>relative</code>限制的<code>absolute</code>定位，行为表现上是不使用<code>top/right/bottom/left</code>任何一个属性或auto作为值。</p>
+	<p>要实现在页面中的精确定位，主要依据<code>absolute</code>的其中两个特性：</p>
+		<ul>
+			<li>去浮动。即元素本身不受<code>float</code>影响</li>
+			<li>位置跟随。元素为<code>inline</code>或<code>inline-block</code>时，位置紧随之前元素。</li>
+		</ul>
+	<p>根据这两个特性，加上<code>absolute</code>化元素脱离了文档流，所以配合<code>margin</code>可以实现精确定位，且其兼容性好，亦不依赖父级元素中的<code>relative</code>。</p>
+	<h4>实例一</h4>
+	<p>各大网站比较常见的角标的实现，诸如此类的还有各种右上角的Hot、推荐等icon。</p>
+	<img src="http://littleroczhang.github.io/blog/images/absolute1/0.png">
+	<p>翻看了几个网站的实现，绝大部分都是依靠给其父容器添加<code>position: relative;</code>，然后<code>i</code>标签<code>position: absolute;</code>加上<code>left</code>和<code>top</code>来实现的。这种实现方法其父容器的<code>relative</code>较为多余，且其自适应性较差，若图片大小改变，还需要重新计算其位置。而依靠无依赖的<code>absolute</code>来实现则没有这样的缺点。</p>
+	<img src="http://littleroczhang.github.io/blog/images/absolute1/2.png"><br>
+	<img src="http://littleroczhang.github.io/blog/images/absolute1/1.png">
+	<p>下面是实现代码：</p>
+	<pre>
+.pic{
+	display: inline-block;
+	width: 240px;
+	height: 180px;
+	background-color: #ccc;
+	border-radius: 2px;
+}
+.icon-new{
+	position: absolute;
+	margin-left: -52px;
+}
+	</pre>
+	<p>只需<code>margin</code>负值自身的宽度即可。需要注意的是，因为html代码中换行书写i标签时，为了防止由换行符引起的图片与角标之间出现空隙，可以在图片容器与i标签之间加入一行注释：</p>
+	<pre>
+	div class="pic">
+	/div>!--
+	-->i class="icon-new"></i>
+	</pre>
+	<h4>实例二</h4>
+	<p>另一个比较好的实例是运用在下拉列表的定位上：</p>
+	<img src="http://littleroczhang.github.io/blog/images/absolute1/3.png"><br>
+	<img src="http://littleroczhang.github.io/blog/images/absolute1/4.png">
+	<p>下面是代码：</p>
+	<pre>
+ul{
+	position: absolute;
+	display: inline-block;
+	width: 240px;
+	border: 2px solid #c94e47;
+	margin-top: 36px;
+	</pre>
+	<p>相比大多数网站的实现，这种实现方法无疑更加简洁且自适应较好。</p>
+	<p>总之无依赖的绝对定位好处有以下三点：</p>
+	<ol>
+		<li>父元素不需要加上辅助用的relative。</li>
+		<li>自适应性更好。</li>
+		<li>与父元素没有牵连，自生独立，这种实现更健壮，更利于维护。</li>
+	</ol>
