@@ -1,3 +1,4 @@
 baseurl: /blog
+excerpt_separator: "<!--more-->"
 paginate: 6
 paginate_path: "page:num"

@@ -18,7 +18,7 @@ title: 张鹏 Blog
         <li>
 			<h3><a href="{{ site.baseurl }}{{ post.url }}" target="_blank">{{ post.title }}</a></h3>
 			<time>{{ post.date | date_to_string }}</time>
-			<p>  {{ post.content | split:"<!-- more -->" | first % }}...<a href="{{ site.baseurl }}{{ post.url }}" class="more" target="_blank">阅读更多</a></p>
+			<p>{{ post.excerpt }}...<a href="{{ site.baseurl }}{{ post.url }}" class="more" target="_blank">阅读更多</a></p>
 		</li>
      {% endfor %}
 </ul>
