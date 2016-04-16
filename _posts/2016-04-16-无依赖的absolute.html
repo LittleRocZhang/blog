@@ -2,15 +2,9 @@
 layout: post_page1
 title: CSS-无依赖的绝对定位 
 ---
-	<div class="title">　
-		<h2>{{page.title}}</h2>
-	</div>
-	<div class="asset_meta">
-		<span class="author"><a href="http://littleroczhang.github.io/blog">作者：张鹏</a></span>
-		<time>{{ page.date | date_to_string }}</time>
-	</div>
 	<p>之前参加了2016年百度春季的ife，在做第一轮任务过程中刚好看到了张鑫旭大大分享的<a src="http://www.imooc.com/learn/192" target="_blank">深入理解之absolute</a>，在写页面的时候也运用了许多有关的知识。所以结合自己在实际操作中一些体会，在这里做一个梳理汇总。</p>
-	<p>所谓无依赖的绝对定位<code>absolute</code>，即不受<code>relative</code>限制的<code>absolute</code>定位，行为表现上是不使用<code>top/right/bottom/left</code>任何一个属性或auto作为值。</p>
+	<!--more-->
+	<p>所谓无依赖的绝对定位<code>absolute</code>，即不受<code>relative</code>限制的<code>absolute</code>定位，行为表现上是不使用<code>top/right/bottom/left</code>任何一个属性或<code>auto</code>作为值。</p>
 	<p>要实现在页面中的精确定位，主要依据<code>absolute</code>的其中两个特性：</p>
 		<ul>
 			<li>去浮动。即元素本身不受<code>float</code>影响</li>
